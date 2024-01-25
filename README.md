@@ -1,33 +1,22 @@
-# Command.TS V5 QuickStart Template
+# 이프 디스코드 봇 (TypeScript)
+> 이프 오픈소스를 여행하는 히치하이커를 위한 안내서 2탄
 
-This is a template of discord bot made with [@pikokr/command.ts](https://github.com/pikokr/command.ts) v5 with slash commands.
+### Environment
+- Node.js 20.11.0
+- TypeScript 4
+- Discord.js
 
-## Creating an App
+### Setup
+```bash
+# 최초 1회
+pnpm install
 
-You’ll need to have Node 16.9.0 or later version on your local development machine (but it’s not required on the server). We recommend using the latest LTS version. You can use nvm (macOS/Linux) or nvm-windows to switch Node versions between different projects.
-To create a new app, you should use [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
-
-```shell
-npx degit pikokr/command.ts-v5-template my-app
-cd my-app
-
-corepack enable
-
-pnpm i
+# 개발 서버 실행
 pnpm dev
+
+# 빌드
+pnpm build
+
+# 빌드 후 실행
+pnpm start
 ```
-
-Runs the app in development mode.
-
-### Install Dependencies
-
-You can install dependencies with `pnpm install`(this template is configured to use only pnpm for package manager). This must be done the first time you create the app.
-
-### Run the bot in development mode.
-
-You can run your bot in development mode with `pnpm dev`
-
-### Build the bot and run for production
-
-If you use `pnpm build` without errors in your code, the build file will appear in `dist` folder.
-You can execute this file with `pnpm start` for your production.
