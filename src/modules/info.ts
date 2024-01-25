@@ -59,7 +59,7 @@ class InfoExtension extends Extension {
         {
           name: '개발ㆍ운영 - 키뮤소프트',
           value:
-            '**메인 개발**: 키뮤(kimu_latilus), 코로(hollume), 파링(pariring), 먀스(mas05_), 코이(koi3125)\n**참여자**: starcea, kurur.ing, rho_theta',
+            '**메인 개발**: 키뮤(kimu\\_latilus), 코로(hollume), 파링(pariring), 먀스(mas05\\_), 코이(koi3125)\n**참여자**: starcea, kurur.ing, rho_theta',
         },
       ])
       .setFooter({ text: `현재 이프 버전: ${process.env.npm_package_version}` })
