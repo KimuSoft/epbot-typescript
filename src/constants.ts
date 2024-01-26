@@ -1,3 +1,4 @@
+import { Season } from './types/room'
 import { FishRarity, StatEffect } from './types/types'
 
 export const ROOM_TIER_EMBED_COLOR = [
@@ -22,6 +23,34 @@ export const DEFAULT_STAT_EFFECTS: StatEffect = {
 
   fishPriceCoef: 1,
   expCoef: 1,
+}
+
+/** 이 아래는 차후 다국어 지원 시 수정해야 합니다. */
+
+export const getSeasonName = (season: Season) => {
+  switch (season) {
+    case Season.Spring:
+      return '봄'
+    case Season.Summer:
+      return '여름'
+    case Season.Autumn:
+      return '가을'
+    case Season.Winter:
+      return '겨울'
+  }
+}
+
+export const getSeasonIcon = (season: Season) => {
+  switch (season) {
+    case Season.Spring:
+      return '🌸'
+    case Season.Summer:
+      return '🌻'
+    case Season.Autumn:
+      return '🍁'
+    case Season.Winter:
+      return '☃️'
+  }
 }
 
 export const getFishIcon = (rarity: FishRarity) => {

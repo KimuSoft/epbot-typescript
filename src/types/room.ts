@@ -1,5 +1,6 @@
 import { StatEffect } from './types'
-import { HydratedDocument, ObjectId } from 'mongoose'
+import { IUser, IUserMethods, UserDoc } from './user'
+import { HydratedDocument, Model, ObjectId } from 'mongoose'
 
 export enum Season {
   Spring = 1,
@@ -23,8 +24,9 @@ export interface IRoom {
   name: string
 
   // 낚시터 경영 정보
-  ownerId: ObjectId
+  ownerId?: ObjectId
   exp: number
+  fame: number
   fee: number
   clean: number
   landPrice: number
@@ -37,13 +39,16 @@ export interface IRoom {
   // 데이터 생성일
   createdAt: Date
   updatedAt: Date
-
-  // Virtual Fields
-  minPrices: number
 }
 
 export interface IRoomMethods {
   getEffects(): StatEffect
+  // 매입 최소 입찰 금액
+  getMinPrices(): number
+  // 낚시터 소유자
+  getOwner(): Promise<UserDoc | null>
 }
 
-export type RoomDoc = HydratedDocument<IRoom, {}, IRoomMethods>
+export type RoomModel = Model<IRoom, {}, IRoomMethods>
+
+export type RoomDoc = HydratedDocument<IRoom, IRoomMethods>

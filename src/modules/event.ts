@@ -15,6 +15,8 @@ class EventExtension extends Extension {
     // 물고기 정보 동기화
     this.logger.info('Syncing fish...')
     await syncFish()
+
+    this.logger.info('Ready!')
   }
 
   @listener({ event: 'applicationCommandInvokeError', emitter: 'cts' })
@@ -23,10 +25,15 @@ class EventExtension extends Extension {
 
     if (!i.isChatInputCommand()) return
 
-    await i.reply({
-      content:
-        '오류가 발생했어요! 개발자에게 문의해주세요.' + codeBlock(err.message),
-    })
+    const errMsg =
+      '**펑!** 오류가 발생했어요! 개발자에게 문의해주세요.' +
+      codeBlock('cs', '🚫 ' + err.message)
+
+    if (i.deferred || i.replied) {
+      await i.editReply({ content: errMsg })
+    } else {
+      await i.reply({ content: errMsg })
+    }
   }
 
   @listener({ event: 'interactionCreate' })
@@ -34,7 +41,7 @@ class EventExtension extends Extension {
     if (!i.isCommand()) return
 
     // 명령어 사용 시 로깅
-    this.logger.info(`${i.user.tag} used ${i.commandName}`)
+    this.logger.info(`${i.user.tag} used '/${i.commandName}'`)
   }
 }
 

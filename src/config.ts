@@ -1,6 +1,7 @@
 type Config = {
   token: string
   db: string
+  redis: string
   guilds: string[]
 }
 

@@ -1,5 +1,5 @@
 import { BuildingType, PartialStatEffect } from '../../types/types'
-import { Building } from '../building'
+import { Building } from './base'
 
 export class Port extends Building {
   static id = 'HG'

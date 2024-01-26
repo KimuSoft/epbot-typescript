@@ -5,7 +5,6 @@ import {
   ChatInputCommandInteraction,
   Colors,
   EmbedBuilder,
-  inlineCode,
 } from 'discord.js'
 
 class InfoExtension extends Extension {
@@ -46,7 +45,7 @@ class InfoExtension extends Extension {
   })
   async information(i: ChatInputCommandInteraction) {
     const embed = new EmbedBuilder()
-      .setTitle('커여운 낚시 장인 이프!')
+      .setTitle('🎣 커여운 낚시 장인 이프!')
       .setColor(Colors.Blue)
       .setThumbnail(i.client.user.displayAvatarURL())
       .setDescription(
@@ -57,7 +56,7 @@ class InfoExtension extends Extension {
       )
       .addFields([
         {
-          name: '개발ㆍ운영 - 키뮤소프트',
+          name: '개발ㆍ운영 - 키뮤스토리',
           value:
             '**메인 개발**: 키뮤(kimu\\_latilus), 코로(hollume), 파링(pariring), 먀스(mas05\\_), 코이(koi3125)\n**참여자**: starcea, kurur.ing, rho_theta',
         },

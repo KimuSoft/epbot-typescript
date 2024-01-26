@@ -1,9 +1,9 @@
 import { RoomDoc } from './room'
-import { HydratedDocument } from 'mongoose'
+import { HydratedDocument, Model } from 'mongoose'
 
 export interface IUser {
   id: string
-  name: string
+  username: string
   money: number
   exp: number
 
@@ -16,6 +16,9 @@ export interface IUser {
 
 export interface IUserMethods {
   getUserOwnedRooms(): Promise<RoomDoc[]>
+  getLevels(): number
 }
 
-export type UserDoc = HydratedDocument<IUser, {}, IUserMethods>
+export type UserModel = Model<IUser, {}, IUserMethods>
+
+export type UserDoc = HydratedDocument<IUser, IUserMethods>
