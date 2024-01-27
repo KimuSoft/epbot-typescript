@@ -36,9 +36,9 @@ class InfoExtension extends Extension {
   }
 
   @applicationCommand({
-    name: 'info',
+    name: 'ep_info',
     nameLocalizations: {
-      ko: '정보',
+      ko: '이프',
     },
     type: ApplicationCommandType.ChatInput,
     description: '현재 이프의 정보를 알려줘요!',

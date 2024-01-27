@@ -1,4 +1,4 @@
-import { DEFAULT_STAT_EFFECTS } from '../constants'
+import { DEFAULT_STAT_EFFECTS, SELL_FEE } from '../constants'
 import { findBuilding } from '../game/building'
 import {
   Biome,
@@ -16,7 +16,7 @@ import mongoose, { Schema, model } from 'mongoose'
 
 export const roomSchema = new Schema<IRoom, IRoomMethods>(
   {
-    id: { type: String, required: true },
+    id: { type: String, required: true, unique: true },
     name: { type: String, required: true },
 
     ownerId: { type: mongoose.Schema.Types.ObjectId },
@@ -44,7 +44,10 @@ export const roomSchema = new Schema<IRoom, IRoomMethods>(
 
 // 매입에 필요한 최소 금액
 roomSchema.methods.getMinPrices = function (this: RoomDoc): number {
-  return this.landPrice ? this.landPrice * 1.1 : 30000
+  // 주인이 있을 경우 땅값의 5%를 추가함
+  return this.landPrice
+    ? this.landPrice * (1 + (this.ownerId ? SELL_FEE : 0))
+    : 30000
 }
 
 // 시설 효과 불러오기

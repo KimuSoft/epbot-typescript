@@ -6,6 +6,7 @@ import {
   Colors,
   EmbedBuilder,
   PermissionsBitField,
+  inlineCode,
 } from 'discord.js'
 
 class EtcExtension extends Extension {
@@ -29,6 +30,20 @@ class EtcExtension extends Extension {
     count = 5
   ) {
     if (!i.channel || i.channel.isDMBased() || !i.guild?.members.me) return
+
+    // 권한 체크 (이프가 메시지 관리하기 이상의 권한을 가지고 있어야 함)
+    if (
+      !i.guild.members.me.permissions.has(
+        PermissionsBitField.Flags.ManageMessages
+      )
+    ) {
+      return i.reply({
+        content:
+          '이프한테 그럴 권한이 없잖아요!\n' +
+          inlineCode('❗ 이프에게 메시지 관리하기 권한을 주세요'),
+        ephemeral: true,
+      })
+    }
 
     // 권한 체크 (유저가 메시지 관리하기 이상의 권한을 가지고 있어야 함)
     if (!i.memberPermissions?.has(PermissionsBitField.Flags.ManageMessages)) {

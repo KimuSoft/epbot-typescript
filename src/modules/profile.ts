@@ -31,11 +31,12 @@ class ProfileExtension extends Extension {
 
     const profileMsgs = [
       `- \`💰 소지금\`   ${profile.money.toLocaleString()}원`,
+      `- \`💲 총 자산\`   ${profile.totalPrice.toLocaleString()}원`,
       `- \`⭐ 레벨\`   Lv. ${
         profile.level
       } \`(✨ ${profile.exp.toLocaleString()} EXP)\``,
       ...(profile.roomCount
-        ? [`- \`🎣 매입한 낚시터\`   ${profile.roomCount}개`]
+        ? [`- \`🎣 매입한 낚시터\`   ${profile.roomCount}곳`]
         : []),
       ...(profile.highestRoom
         ? [`- \`🏠 가장 높은 땅값\`   💰 ${profile.highestRoom.name}`]
@@ -69,7 +70,7 @@ class ProfileExtension extends Extension {
         iconURL: i.user.displayAvatarURL(),
       })
       .setColor(Colors.Gold)
-      .setDescription(`💰 ${epUser.money.toLocaleString()}원`)
+      .setDescription(`💰 **${epUser.money.toLocaleString()}**`)
       .setFooter({ text: '물고기를 낚아 더 많은 이프머니를 모아봐요!' })
       .setTimestamp()
 

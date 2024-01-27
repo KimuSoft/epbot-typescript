@@ -5,7 +5,11 @@ interface ICounter {
 }
 
 const counterSchema = new Schema<ICounter>({
-  userId: { type: mongoose.Schema.Types.ObjectId, required: true },
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    unique: true,
+  },
 })
 
 export const Counter = model<ICounter>('counters', counterSchema)

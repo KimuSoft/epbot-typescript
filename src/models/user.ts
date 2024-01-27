@@ -1,11 +1,10 @@
-import { RoomDoc } from '../types/room'
 import { IUser, IUserMethods, UserDoc, UserModel } from '../types/user'
 import { Room } from './room'
 import { Schema, model } from 'mongoose'
 
 const userSchema = new Schema<IUser, IUserMethods>(
   {
-    id: { type: String, required: true },
+    id: { type: String, required: true, unique: true },
     username: { type: String, required: true },
     money: { type: Number, required: true, default: 0 },
     exp: { type: Number, required: true, default: 0 },

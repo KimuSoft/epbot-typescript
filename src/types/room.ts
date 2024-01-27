@@ -1,6 +1,6 @@
 import { StatEffect } from './types'
 import { IUser, IUserMethods, UserDoc } from './user'
-import { HydratedDocument, Model, ObjectId } from 'mongoose'
+import mongoose, { HydratedDocument, Model, ObjectId } from 'mongoose'
 
 export enum Season {
   Spring = 1,
@@ -24,7 +24,7 @@ export interface IRoom {
   name: string
 
   // 낚시터 경영 정보
-  ownerId?: ObjectId
+  ownerId?: mongoose.Types.ObjectId
   exp: number
   fame: number
   fee: number

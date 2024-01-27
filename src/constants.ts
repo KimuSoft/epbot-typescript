@@ -1,4 +1,4 @@
-import { Season } from './types/room'
+import { Biome, Season } from './types/room'
 import { FishRarity, StatEffect } from './types/types'
 
 export const ROOM_TIER_EMBED_COLOR = [
@@ -24,6 +24,9 @@ export const DEFAULT_STAT_EFFECTS: StatEffect = {
   fishPriceCoef: 1,
   expCoef: 1,
 }
+
+// 매각수수료 (주인이 있는 땅을 매입할 때 발생함)
+export const SELL_FEE = 0.05
 
 /** 이 아래는 차후 다국어 지원 시 수정해야 합니다. */
 
@@ -67,5 +70,24 @@ export const getFishIcon = (rarity: FishRarity) => {
       return '🦈'
     case FishRarity.Mythic:
       return '🐋'
+  }
+}
+
+export const getBiomeName = (biome: Biome) => {
+  switch (biome) {
+    case Biome.Desert:
+      return '🏜️ 메마른 땅'
+    case Biome.Sea:
+      return '🏖️ 바닷가'
+    case Biome.River:
+      return '🏞️ 강가'
+    case Biome.Lake:
+      return '🚤 호수'
+    case Biome.Valley:
+      return '⛰️ 계곡'
+    case Biome.Swamp:
+      return '🥬 습지'
+    case Biome.Foreshore:
+      return '🦀 갯벌'
   }
 }

@@ -13,7 +13,7 @@ interface IFishData {
 }
 
 const fishData = new Schema<IFishData>({
-  id: { type: String, required: true },
+  id: { type: String, required: true, unique: true },
   name: { type: String, required: true },
   avgPrice: { type: Number, required: true },
   avgLength: { type: Number, required: true },

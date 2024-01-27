@@ -1,4 +1,4 @@
-import { getSeasonIcon, getSeasonName } from '../../constants'
+import { getBiomeName, getSeasonIcon, getSeasonName } from '../../constants'
 import { getRoomInfo } from '../../services/room/info'
 import { removeEmojis } from '../../utils/demojify'
 import { roomGroup } from './index'
@@ -22,7 +22,7 @@ class RoomInfoExtension extends Extension {
     if (!i.channel || i.channel.isDMBased()) return
 
     const room = await i.channel.epRoom
-    const { roomThumbnail, effects } = await getRoomInfo(
+    const { roomThumbnail, effects, roomOwner } = await getRoomInfo(
       room,
       this.client,
       i.guild || undefined
@@ -32,9 +32,10 @@ class RoomInfoExtension extends Extension {
       .setTitle(`ℹ️  ' ${removeEmojis(room.name)} ' 낚시터 정보`)
       .setDescription(
         dedent`
+        - \`지형\`   ${getBiomeName(room.biome)}
         - \`계절\`   ${getSeasonIcon(room.season)} ${getSeasonName(room.season)}
         - \`주인\`   ${
-          room.ownerId ? `👑 <@${room.ownerId}>` : '공영 낚시터 **(매입 가능)**'
+          room.ownerId ? `👑 ${roomOwner}` : '공영 낚시터 **(매입 가능)**'
         }
         - \`수질\`   **2급수**  \`(🧹 ${room.clean.toLocaleString()})\`
         - \`땅값\`   💰 ${room.landPrice.toLocaleString()}
