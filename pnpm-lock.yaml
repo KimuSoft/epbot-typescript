@@ -9,7 +9,7 @@ dependencies:
     version: 4.14.202
   '@types/node-schedule':
     specifier: ^2.1.5
-    version: 2.1.5
+    version: 2.1.8
   dedent:
     specifier: ^1.5.1
     version: 1.5.1
@@ -533,8 +533,8 @@ packages:
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
     dev: false
 
-  /@types/node-schedule@2.1.5:
-    resolution: {integrity: sha512-bN0MiplDBUxNMmlEi4iykjLYD7+Ze3DEevzliCn8WYuDwYSPj/5XFh8wZw+YXPLpLxiNWlIONYiQ67g/vowSMA==}
+  /@types/node-schedule@2.1.8:
+    resolution: {integrity: sha512-k00g6Yj/oUg/CDC+MeLHUzu0+OFxWbIqrFfDiLi6OPKxTujvpv29mHGM8GtKr7B+9Vv92FcK/8mRqi1DK5f3hA==}
     dependencies:
       '@types/node': 18.11.18
     dev: false
