@@ -9,7 +9,7 @@ dependencies:
     version: 4.14.202
   '@types/node-schedule':
     specifier: ^2.1.5
-    version: 2.1.5
+    version: 2.1.8
   dedent:
     specifier: ^1.5.1
     version: 1.5.1
@@ -30,7 +30,7 @@ dependencies:
     version: 8.1.1
   node-schedule:
     specifier: ^2.1.1
-    version: 2.1.1
+    version: 2.1.2
   tslog:
     specifier: ^4.7.1
     version: 4.8.2
@@ -533,8 +533,8 @@ packages:
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
     dev: false
 
-  /@types/node-schedule@2.1.5:
-    resolution: {integrity: sha512-bN0MiplDBUxNMmlEi4iykjLYD7+Ze3DEevzliCn8WYuDwYSPj/5XFh8wZw+YXPLpLxiNWlIONYiQ67g/vowSMA==}
+  /@types/node-schedule@2.1.8:
+    resolution: {integrity: sha512-k00g6Yj/oUg/CDC+MeLHUzu0+OFxWbIqrFfDiLi6OPKxTujvpv29mHGM8GtKr7B+9Vv92FcK/8mRqi1DK5f3hA==}
     dependencies:
       '@types/node': 18.11.18
     dev: false
@@ -838,8 +838,9 @@ packages:
   /cron-parser@4.9.0:
     resolution: {integrity: sha512-p0SaNjrHOnQeR8/VnfGbmg9te2kfyYSQ7Sc/j/6DtPL3JQvKxmjO9TSjNFpujqV3vEYYBvNNvXSxzyksBWAx1Q==}
     engines: {node: '>=12.0.0'}
+    deprecated: v4 is no longer maintained, upgrade to v5
     dependencies:
-      luxon: 3.4.4
+      luxon: 3.7.2
     dev: false
 
   /cross-spawn@7.0.3:
@@ -1384,8 +1385,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /luxon@3.4.4:
-    resolution: {integrity: sha512-zobTr7akeGHnv7eBOXcRgMeCP6+uyYsczwmeRCauvpvaAltgNyTbLH/+VaEAPUeWBT+1GuNmz4wC/6jtQzbbVA==}
+  /luxon@3.7.2:
+    resolution: {integrity: sha512-vtEhXh/gNjI9Yg1u4jX/0YVPMvxzHuGgCm6tC5kZyb08yjGWGnqAjGJvcXbqQR2P3MyMEFnRbpcdFS6PBcLqew==}
     engines: {node: '>=12'}
     dev: false
 
@@ -1525,8 +1526,8 @@ packages:
       whatwg-url: 5.0.0
     dev: false
 
-  /node-schedule@2.1.1:
-    resolution: {integrity: sha512-OXdegQq03OmXEjt2hZP33W2YPs/E5BcFQks46+G2gAxs4gHOIVD1u7EqlYLYSKsaIpyKCK9Gbk0ta1/gjRSMRQ==}
+  /node-schedule@2.1.2:
+    resolution: {integrity: sha512-JuKopr93W+WP+TaK5yoHJGpzPF9fpkH8Vcc9CXGE993BNeRKsb3L4Wy6FzL0VxkEa6U+8M4Ni0HEm9rMMnwurg==}
     engines: {node: '>=6'}
     dependencies:
       cron-parser: 4.9.0
